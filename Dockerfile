@@ -24,16 +24,21 @@ RUN tar xvf jtreg.tar.gz
 
 
 
-FROM buildenv
-# Define the entrypoint to run the executable
-ENTRYPOINT ["/openjdk/"]
+FROM buildenv AS compilejdk
 
 # Change to openJDK dir
 WORKDIR /openjdk
 # Copy the JDK files the Git repository
 COPY ./openjdk .
+
+# Copy hello world
+COPY ./main.java ./main.java
+
 # Configure bash
 RUN bash configure --with-jtreg=../jtreg
 
 #Build OpenJDK
 RUN make
+
+# Enter bash
+ENTRYPOINT ["/bin/bash"]

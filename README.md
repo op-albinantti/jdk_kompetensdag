@@ -10,4 +10,12 @@ Building the JDK is a hardware-intensive process, meaning your laptop might run 
 ## Building the Docker image
 To build the Docker image, all you should need to do is run the `docker build`-command provided in the top-level `Makefile`. *Note that if you are on an M1/M2 Mac running the Apple Silicon-architecture, you must use `docker buildm1`!*
 
-Once the Docker image has been built, run 
+## Running the Docker image
+Once the Docker image has been built and the JDK has been compiled (as part of the build process), run `make run` to enter the Docker image interactively. 
+
+The executable java and javac will be located in openjdk/build/[architecture]/jdk/bin/.
+
+To test out your home-made Java development kit, try compiling the provided main.java using 
+`./build/linux-aarch64-server-release/jdk/bin/javac ./main.java`
+and then running it using
+`./build/linux-aarch64-server-release/jdk/bin/java Main`
