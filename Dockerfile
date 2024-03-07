@@ -38,7 +38,7 @@ COPY ./main.java ./main.java
 RUN bash configure --with-jtreg=../jtreg
 
 #Build OpenJDK
-RUN make
+RUN make images
 
 # Enter bash
 ENTRYPOINT ["/bin/bash"]
