@@ -4,7 +4,7 @@ ARG arch=x
 # Install build tools
 RUN yum groupinstall "Development Tools"
 RUN yum install alsa-lib-devel cups-devel fontconfig-devel  \
-    libXtst-devel libXt-devel libXrender-devel libXrandr-devel libXi-devel
+    libXtst-devel libXt-devel libXrender-devel libXrandr-devel libXi-devel emacs vim
 
 # Install Base JDK
 WORKDIR /

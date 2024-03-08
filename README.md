@@ -26,3 +26,6 @@ and then running it using
 ## Recompiling
 When changing anything in your build, you'll need to recompile. If the change has been made inside the container, you can run `make images` from the root folder to compile the JDK using Oracle's make pipeline.
 If you're coding outside the docker container, you need to re-build your docker image using the steps above. Note that the latter will re-compile the entire JDK, which on a OP Macbook Pro 2022 takes about 6 minutes. If you are only making a small change, consider modifying the library inside of the container using VIM or Emacs.
+
+## Get started!
+That's it! Start solving the challenges provided in `Challenges.pdf`!
